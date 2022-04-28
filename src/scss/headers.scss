@@ -1,0 +1,48 @@
+.header {
+  max-width: 1450px;
+  margin: 0 auto;
+  user-select: none;
+
+  .reape {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 30px;
+    overflow: hidden;
+  }
+
+  .title {
+  }
+  h1 {
+    margin: 0px 0px 15px;
+    font-size: $_45px;
+    font-family: 'Pacifico', cursive;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    color: $white;
+    -webkit-text-stroke: 1px $black;
+  }
+  h2 {
+    font-size: $_27px;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-bottom: 20px;
+  }
+  .photo {
+    margin: 5px;
+    .photo_header {
+      animation: 25s photo_header infinite linear;
+      user-select: none;
+    }
+
+    @keyframes photo_header {
+      from {
+        transform: rotate(0);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+@import 'macros.scss';
+@import 'cdn.scss';
+@import 'headers.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body,
+html {
+  background: repeating-linear-gradient(
+    60deg,
+    $dark_blue,
+    $blue 30%,
+    $yello 50%,
+    $deep_yello 70%,
+    $bron 100%
+  );
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.container {
+  max-width: 1360px;
+  background-color: #fff;
+  margin: 0 auto 30px;
+  border: 5px solid $black;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  max-height: 90vh;
+}
+
+h3 {
+  font-size: $_27px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: $_18px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+}
