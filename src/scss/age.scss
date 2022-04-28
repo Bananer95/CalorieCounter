@@ -1,0 +1,42 @@
+.container_age {
+  .age {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    margin: 0px 20px 15px;
+
+    .age_input {
+      display: flex;
+      align-items: center;
+
+      input {
+        font-size: $_27px;
+        text-align: center;
+        max-width: 80px;
+        font-family: 'Oswald', sans-serif;
+        border: 3px solid $black;
+        border-radius: 3px;
+        background-color: $blue;
+      }
+
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    }
+
+    p {
+      width: 60%;
+
+      span {
+        font-size: $_27px;
+        text-transform: uppercase;
+        color: $blue;
+      }
+      .age_input_secondSpan {
+        color: $deep_yello;
+      }
+    }
+  }
+}
