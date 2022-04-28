@@ -1,6 +1,8 @@
 @import 'macros.scss';
 @import 'cdn.scss';
 @import 'headers.scss';
+@import 'gender.scss';
+@import 'age.scss';
 
 * {
   margin: 0;
@@ -35,12 +37,16 @@ html {
   flex-direction: column;
   text-align: center;
   max-height: 90vh;
+  user-select: none;
+  padding: 0 -15px;
 }
 
 h3 {
   font-size: $_27px;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Pacifico', cursive;
   font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
 }
 
 h4 {
