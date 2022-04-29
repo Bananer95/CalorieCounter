@@ -1,0 +1,38 @@
+.result_options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 90%;
+  margin: 0 auto 20px;
+  .result_normal {
+    padding: 0 5px;
+    max-width: 33%;
+    span {
+      text-transform: uppercase;
+      font-size: $_27px;
+      color: $blue;
+    }
+  }
+
+  .result_up {
+    max-width: 33%;
+    padding: 0 5px;
+
+    span {
+      text-transform: uppercase;
+      font-size: $_27px;
+      color: $yello;
+    }
+  }
+
+  .result_down {
+    max-width: 33%;
+    padding: 0 5px;
+
+    span {
+      text-transform: uppercase;
+      font-size: $_27px;
+      color: $deep_yello;
+    }
+  }
+}

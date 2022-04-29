@@ -108,13 +108,33 @@
         </div>
       </div>
     </div>
-    <div class="container">
+    <div class="container container_fisical">
       <h3>Давай выберем физическую активность</h3>
       <div class="fisical">
         <div class="fisical_box minimal">
           <input type="checkbox" name="minimal" id="minimal" />
           <label for="minimal">Минимальная</label>
           <p>Сидячая работа и без физических нагрузок</p>
+        </div>
+        <div class="fisical_box low">
+          <input type="checkbox" name="low" id="low" />
+          <label for="low">Низкая</label>
+          <p>Редкие, нерегулярные тренировки, активность в быту</p>
+        </div>
+        <div class="fisical_box average">
+          <input type="checkbox" name="average" id="average" />
+          <label for="average">Среднее</label>
+          <p>Тренировки 2 - 5 раза в неделю</p>
+        </div>
+        <div class="fisical_box high">
+          <input type="checkbox" name="high" id="high" />
+          <label for="high">Высокая</label>
+          <p>Тренировки 4 - 7 раз в неделю</p>
+        </div>
+        <div class="fisical_box veryHigh">
+          <input type="checkbox" name="veryHigh" id="veryHigh" />
+          <label for="veryHigh">Очень высокая</label>
+          <p>Тренировка 7 и более раз в неделю</p>
         </div>
       </div>
     </div>
@@ -123,35 +143,39 @@
       <div class="caloriesInDay"></div>
     </div> -->
 
-    <div class="container">
+    <div class="container container_result">
       <h3>Результат</h3>
       <div class="result">
         <h4>Ваша норма калорий</h4>
-        <div class="result_normal">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur <span>adipisicing</span>
-            elit. Maiores, sapiente?
-          </p>
-        </div>
-        <div class="result_up">
-          <p>
-            Lorem ipsum dolor sit, amet consectetur
-            <span>adipisicing</span> elit. Officia perspiciatis soluta tenetur?
-          </p>
-        </div>
-        <div class="result_down">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
-            <span>tempore</span> eveniet delectus natus. Officiis provident
-            fugit nulla, beatae eos alias!
-          </p>
+        <div class="result_options">
+          <div class="result_normal">
+            <p>
+              Для повседневнго поддержания веса вам необходимо съедать
+              <span>3000</span>
+              калорий в день.
+            </p>
+          </div>
+          <div class="result_up">
+            <p>
+              Для увеличения веса лучше всего чтоб вы съедали
+              <span>5000</span> калорий в день.
+            </p>
+          </div>
+          <div class="result_down">
+            <p>
+              Для того чтобы сбросить вес, вам лучше всего съедать не меньше
+              <span>2500</span> калорий в день.
+            </p>
+          </div>
         </div>
       </div>
     </div>
 
     <footer class="footer">
-      <button class="btn btn_calculation">Расчитать</button>
-      <button class="btn btn_clear">Очистить</button>
+      <div class="btn">
+        <button class="btn_calculation">Расcчитать</button>
+        <button class="btn_clear">Очистить</button>
+      </div>
     </footer>
 
     <script type="module" src="./js/index.js"></script>
