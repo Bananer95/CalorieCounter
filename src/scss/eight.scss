@@ -1,0 +1,38 @@
+.eight {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  margin: 0 20px 20px;
+
+  .eight_input {
+    display: flex;
+    align-items: center;
+    input {
+      font-size: $_27px;
+      text-align: center;
+      max-width: 80px;
+      font-family: 'Oswald', sans-serif;
+      border: 3px solid $black;
+      border-radius: 3px;
+      background-color: $blue;
+    }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+  p {
+    max-width: 60%;
+    margin: auto 0;
+
+    span {
+      font-size: $_27px;
+      text-transform: uppercase;
+      color: $blue;
+    }
+    .eight_secondSpan {
+      color: $deep_yello;
+    }
+  }
+}

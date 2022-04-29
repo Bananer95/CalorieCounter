@@ -1,7 +1,7 @@
 .container_age {
   .age {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     flex-direction: row;
     margin: 0px 20px 15px;
 
@@ -27,6 +27,7 @@
     }
 
     p {
+      margin: auto 0;
       width: 60%;
 
       span {
@@ -37,6 +38,10 @@
       .age_input_secondSpan {
         color: $deep_yello;
       }
+    }
+
+    .img_age {
+      align-content: center;
     }
   }
 }
