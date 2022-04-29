@@ -6,6 +6,91 @@
   .minimal {
     border: 1px solid $dark_blue;
     position: relative;
+    transition: 0.2s linear;
+
+    label {
+      color: $dark_blue;
+    }
+
+    &:hover {
+      background-color: $dark_blue;
+
+      label {
+        color: $white;
+      }
+    }
+  }
+
+  .low {
+    border: 1px solid $blue;
+    position: relative;
+    transition: 0.2s linear;
+
+    label {
+      color: $blue;
+    }
+
+    &:hover {
+      background-color: $blue;
+
+      label {
+        color: $white;
+      }
+    }
+  }
+
+  .average {
+    border: 1px solid $yello;
+    position: relative;
+    transition: 0.2s linear;
+
+    label {
+      color: $yello;
+    }
+
+    &:hover {
+      background-color: $yello;
+
+      label {
+        color: $white;
+      }
+    }
+  }
+
+  .high {
+    border: 1px solid $deep_yello;
+    position: relative;
+    transition: 0.2s linear;
+
+    label {
+      color: $deep_yello;
+    }
+
+    &:hover {
+      background-color: $deep_yello;
+
+      label {
+        color: $white;
+      }
+    }
+  }
+
+  .veryHigh {
+    border: 1px solid $bron;
+    position: relative;
+    transition: 0.2s linear;
+
+    label {
+      color: $bron;
+    }
+
+    &:hover {
+      background-color: $bron;
+
+      label {
+        color: $white;
+      }
+    }
   }
 
   .fisical_box {
@@ -13,12 +98,9 @@
     border-radius: 5px;
     max-width: 80%;
     margin: 10px auto;
-    padding: 5px;
+    padding: 0px 10px 15px;
+    min-width: 50%;
 
-    .minimal {
-      border-color: $dark_blue;
-      position: relative;
-    }
     input {
       position: absolute;
       top: -2px;
@@ -33,7 +115,6 @@
     label {
       text-align: center;
       font-size: $_27px;
-      color: $dark_blue;
     }
   }
 }
