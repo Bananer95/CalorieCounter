@@ -15,6 +15,7 @@
     background-color: $dark_blue;
     color: $white;
     box-shadow: 0px 0px 30px #ffffe0;
+
     &:hover {
       background-color: $blue;
     }
@@ -22,6 +23,11 @@
     &:active {
       box-shadow: 0px 0px 20px #808080;
       background-color: $blue;
+
+      #result .popat_result {
+        opacity: 1;
+        visibility: visible;
+      }
     }
   }
 
