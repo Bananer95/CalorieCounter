@@ -1,5 +1,6 @@
 import eventBtn from './eventBtn.js';
-import eventLinks from './eventLinks.js';
+import { eventLinks, closingEventGenders } from './eventGenders.js';
 
 eventBtn();
 eventLinks();
+closingEventGenders();
