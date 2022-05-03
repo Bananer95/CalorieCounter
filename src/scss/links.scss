@@ -1,0 +1,26 @@
+.link {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  height: 100%;
+  max-width: 1100px;
+  margin: 0 0 30px 10vh;
+  user-select: none;
+
+  h5 {
+    text-align: left;
+    margin: 0px 0px 15px;
+    font-size: $_36px;
+    font-family: 'Pacifico', cursive;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: $white;
+    -webkit-text-stroke: 1px $black;
+    transition: 0.1s linear;
+
+    &:hover {
+      transform: translate(7px, -3px);
+      text-shadow: #808080 -7px 3px 10px;
+    }
+  }
+}

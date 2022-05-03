@@ -8,6 +8,7 @@
 @import 'fisical.scss';
 @import 'result.scss';
 @import 'footer.scss';
+@import 'links.scss';
 
 * {
   margin: 0;
@@ -17,16 +18,21 @@
   text-decoration: none;
 }
 
-body,
 html {
   background: repeating-linear-gradient(
-    60deg,
-    $dark_blue,
-    $blue 30%,
-    $yello 50%,
-    $deep_yello 70%,
-    $bron 100%
-  );
+      60deg,
+      $dark_blue,
+      $blue 30%,
+      $yello 50%,
+      $deep_yello 70%,
+      $bron 100%
+    )
+    no-repeat;
+  -moz-background-size: 100%;
+  -webkit-background-size: 100%;
+  -o-background-size: 100%;
+  height: 100%;
+  background-size: cover;
   font-family: 'Oswald', sans-serif;
   font-weight: 400;
   font-size: 18px;
