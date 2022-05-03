@@ -9,7 +9,6 @@ function eventBtn() {
       popatResult.classList.add('open');
     } else if (btnCler) {
       popatResult.classList.remove('open');
-      console.log(2);
     }
   });
 }
