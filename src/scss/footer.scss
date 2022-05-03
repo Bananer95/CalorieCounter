@@ -1,55 +1,59 @@
-.btn {
-  display: flex;
-  justify-content: space-evenly;
-  margin: 30px 0;
+.footer {
+  // flex: 1 0 auto;
 
-  .btn_calculation {
-    border: 0.5px solid #ffffe0;
-    box-shadow: none;
-    padding: 20px 50px;
-    font-size: $_36px;
-    font-family: 'Playfair Display', serif;
-    font-weight: 500;
-    cursor: pointer;
-    border-radius: 15px;
-    background-color: $dark_blue;
-    color: $white;
-    box-shadow: 0px 0px 30px #ffffe0;
+  .btn {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 30px 0;
 
-    &:hover {
-      background-color: $blue;
-    }
+    .btn_calculation {
+      border: 0.5px solid #ffffe0;
+      box-shadow: none;
+      padding: 20px 50px;
+      font-size: $_36px;
+      font-family: 'Playfair Display', serif;
+      font-weight: 500;
+      cursor: pointer;
+      border-radius: 15px;
+      background-color: $dark_blue;
+      color: $white;
+      box-shadow: 0px 0px 30px #ffffe0;
 
-    &:active {
-      box-shadow: 0px 0px 20px #808080;
-      background-color: $blue;
+      &:hover {
+        background-color: $blue;
+      }
 
-      #result .popat_result {
-        opacity: 1;
-        visibility: visible;
+      &:active {
+        box-shadow: 0px 0px 20px #808080;
+        background-color: $blue;
+
+        #result .popat_result {
+          opacity: 1;
+          visibility: visible;
+        }
       }
     }
-  }
 
-  .btn_clear {
-    border: 0.5px solid #ffffe0;
-    padding: 20px 50px;
-    font-size: $_36px;
-    font-family: 'Playfair Display', serif;
-    font-weight: 500;
-    cursor: pointer;
-    border-radius: 15px;
-    background-color: $yello;
-    color: $white;
-    box-shadow: 0px 0px 30px #ffffe0;
+    .btn_clear {
+      border: 0.5px solid #ffffe0;
+      padding: 20px 50px;
+      font-size: $_36px;
+      font-family: 'Playfair Display', serif;
+      font-weight: 500;
+      cursor: pointer;
+      border-radius: 15px;
+      background-color: $yello;
+      color: $white;
+      box-shadow: 0px 0px 30px #ffffe0;
 
-    &:hover {
-      background-color: $deep_yello;
-    }
+      &:hover {
+        background-color: $deep_yello;
+      }
 
-    &:active {
-      box-shadow: 0px 0px 20px #808080;
-      background-color: $deep_yello;
+      &:active {
+        box-shadow: 0px 0px 20px #808080;
+        background-color: $deep_yello;
+      }
     }
   }
 }

@@ -5,13 +5,10 @@
   right: 0;
   bottom: 0;
   margin: auto;
-  display: flex;
   max-height: 30vh;
-  justify-content: space-around;
-  align-items: center;
   opacity: 0;
   visibility: hidden;
-  transition: 0.5s linear;
+  transition: 0.2s linear;
 
   .result {
     h4 {

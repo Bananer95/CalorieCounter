@@ -1,4 +1,15 @@
 .container_age {
+  position: fixed;
+  top: 25%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  max-height: 35vh;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.2s linear;
+
   .age {
     display: flex;
     justify-content: space-around;
@@ -44,4 +55,9 @@
       align-content: center;
     }
   }
+}
+
+.show {
+  opacity: 1;
+  visibility: visible;
 }
