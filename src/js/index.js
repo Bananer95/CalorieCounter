@@ -1,6 +1,8 @@
 import eventBtn from './eventBtn.js';
-import { eventLinks, closingEventGenders } from './eventGenders.js';
+import { eventLinks } from './eventLinks.js';
+import { closingEventGenders, closingEventFisical } from './closingEvents.js';
 
 eventBtn();
 eventLinks();
 closingEventGenders();
+closingEventFisical();
