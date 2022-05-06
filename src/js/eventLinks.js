@@ -1,12 +1,11 @@
 import * as closeEvent from './closingEvents.js';
-import * as btnEvent from './eventBtn.js';
 
-const btnRes = document.querySelector('button.btn_calculation');
 const btnCler = document.querySelector('button.btn_clear');
+const btnRes = document.querySelector('button.btn_calculation');
 
 // export let checkPoitn = 0;
 
-// function checkBtn() {
+// function checkBtn(checkPoitn) {
 //   if (checkPoitn === 1) {
 //     btnRes.textContent = 'Сохранить';
 //     btnCler.textContent = 'Закрыть';
@@ -20,6 +19,8 @@ const links = document.getElementById('links');
 
 function eventLinks() {
   links.addEventListener('click', (event) => {
+    btnRes.setAttribute('disabled', 'disabled');
+
     switch (event.target.dataset.action) {
       case 'link_gender': {
         closeEvent.gender.classList.add('show');
@@ -34,17 +35,20 @@ function eventLinks() {
 
       case 'link_age': {
         closeEvent.age.classList.add('show');
+        btnCler.textContent = 'Закрыть';
 
         break;
       }
 
       case 'link_groth': {
         closeEvent.groth.classList.add('show');
+        btnCler.textContent = 'Закрыть';
         break;
       }
 
       case 'link_eight': {
         closeEvent.eight.classList.add('show');
+        btnCler.textContent = 'Закрыть';
         break;
       }
     }
