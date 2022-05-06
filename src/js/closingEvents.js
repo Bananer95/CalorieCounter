@@ -3,6 +3,10 @@ export const age = document.querySelector('div.container_age');
 export const groth = document.querySelector('div.container_groth');
 export const fisical = document.querySelector('div.container_fisical');
 export const eight = document.querySelector('div.container_eight');
+const ba = document.querySelector('button.btn_calculation');
+
+export let sex;
+// export let fisical;
 
 // Gender
 
@@ -16,9 +20,15 @@ function closingEventGenders() {
     if (man) {
       gender.classList.remove('show');
       text.textContent = 'Ваш пол: Мужской';
+      sex = 5;
+      console.log(sex);
+      ba.removeAttribute('disabled');
     } else if (woman) {
       gender.classList.remove('show');
       text.textContent = 'Ваш пол: Женский';
+      sex = -161;
+      console.log(sex);
+      ba.removeAttribute('disabled');
     }
   });
 }
@@ -61,6 +71,7 @@ function closingEventFisical() {
     }
 
     fisical.classList.remove('show');
+    ba.removeAttribute('disabled');
   });
 }
 

@@ -16,9 +16,12 @@
     letter-spacing: 5px;
     color: $white;
     -webkit-text-stroke: 1px $black;
-    transition: 0.1s linear;
+    transition: transform 0.1s linear;
 
     &:hover {
+      position: relative;
+      top: 0;
+      left: 0;
       transform: translate(7px, -3px);
       text-shadow: #808080 -7px 3px 10px;
     }
