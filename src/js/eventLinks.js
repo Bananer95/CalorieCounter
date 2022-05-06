@@ -4,25 +4,22 @@ import * as btnEvent from './eventBtn.js';
 const btnRes = document.querySelector('button.btn_calculation');
 const btnCler = document.querySelector('button.btn_clear');
 
-export let checkPoitn = 0;
+// export let checkPoitn = 0;
 
-function checkBtn() {
-  if (checkPoitn === 1) {
-    btnRes.textContent = 'Сохранить';
-    btnCler.textContent = 'Закрыть';
-  } else {
-    btnRes.textContent = 'Расcчитать';
-    btnCler.textContent = 'Очистить';
-  }
-}
+// function checkBtn() {
+//   if (checkPoitn === 1) {
+//     btnRes.textContent = 'Сохранить';
+//     btnCler.textContent = 'Закрыть';
+//   } else {
+//     btnRes.textContent = 'Расcчитать';
+//     btnCler.textContent = 'Очистить';
+//   }
+// }
 
 const links = document.getElementById('links');
 
 function eventLinks() {
   links.addEventListener('click', (event) => {
-    checkPoitn = 1;
-    checkBtn();
-
     switch (event.target.dataset.action) {
       case 'link_gender': {
         closeEvent.gender.classList.add('show');
