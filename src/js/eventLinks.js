@@ -1,21 +1,14 @@
 import * as closeEvent from './closingEvents.js';
 
-const btnCler = document.querySelector('button.btn_clear');
-const btnRes = document.querySelector('button.btn_calculation');
-
-// export let checkPoitn = 0;
-
-// function checkBtn(checkPoitn) {
-//   if (checkPoitn === 1) {
-//     btnRes.textContent = 'Сохранить';
-//     btnCler.textContent = 'Закрыть';
-//   } else {
-//     btnRes.textContent = 'Расcчитать';
-//     btnCler.textContent = 'Очистить';
-//   }
-// }
+export const btnCler = document.querySelector('button.btn_clear');
+export const btnRes = document.querySelector('button.btn_calculation');
 
 const links = document.getElementById('links');
+
+function showBlock(block) {
+  block.classList.add('show');
+  btnCler.textContent = 'Закрыть';
+}
 
 function eventLinks() {
   links.addEventListener('click', (event) => {
@@ -23,32 +16,29 @@ function eventLinks() {
 
     switch (event.target.dataset.action) {
       case 'link_gender': {
-        closeEvent.gender.classList.add('show');
+        showBlock(closeEvent.gender);
 
         break;
       }
       case 'link_fisical': {
-        closeEvent.fisical.classList.add('show');
+        showBlock(closeEvent.fisical);
 
         break;
       }
 
       case 'link_age': {
-        closeEvent.age.classList.add('show');
-        btnCler.textContent = 'Закрыть';
+        showBlock(closeEvent.age);
 
         break;
       }
 
       case 'link_groth': {
-        closeEvent.groth.classList.add('show');
-        btnCler.textContent = 'Закрыть';
+        showBlock(closeEvent.groth);
         break;
       }
 
       case 'link_eight': {
-        closeEvent.eight.classList.add('show');
-        btnCler.textContent = 'Закрыть';
+        showBlock(closeEvent.eight);
         break;
       }
     }

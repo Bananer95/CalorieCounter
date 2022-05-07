@@ -6,3 +6,5 @@ eventBtn();
 eventLinks();
 closingEventGenders();
 closingEventFisical();
+
+//  Не могу изменять экспортированные перменные в других файлах
