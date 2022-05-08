@@ -1,14 +1,10 @@
 import * as closeEvent from './closingEvents.js';
+import { showBlock } from './helpers.js';
 
 export const btnCler = document.querySelector('button.btn_clear');
 export const btnRes = document.querySelector('button.btn_calculation');
 
 const links = document.getElementById('links');
-
-function showBlock(block) {
-  block.classList.add('show');
-  btnCler.textContent = 'Закрыть';
-}
 
 function eventLinks() {
   links.addEventListener('click', (event) => {
@@ -17,7 +13,6 @@ function eventLinks() {
     switch (event.target.dataset.action) {
       case 'link_gender': {
         showBlock(closeEvent.gender);
-
         break;
       }
       case 'link_fisical': {
@@ -46,4 +41,4 @@ function eventLinks() {
   return;
 }
 
-export { eventLinks, checkBtn };
+export default eventLinks;
