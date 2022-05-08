@@ -8,8 +8,6 @@ const links = document.getElementById('links');
 
 function eventLinks() {
   links.addEventListener('click', (event) => {
-    btnRes.setAttribute('disabled', 'disabled');
-
     switch (event.target.dataset.action) {
       case 'link_gender': {
         showBlock(closeEvent.gender);
@@ -17,13 +15,11 @@ function eventLinks() {
       }
       case 'link_fisical': {
         showBlock(closeEvent.fisical);
-
         break;
       }
 
       case 'link_age': {
         showBlock(closeEvent.age);
-
         break;
       }
 

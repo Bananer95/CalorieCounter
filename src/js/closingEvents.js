@@ -9,6 +9,7 @@ export const eight = document.querySelector('div.container_eight');
 export const textGender = document.querySelector('div.link_gender>h5');
 export const textFisical = document.querySelector('div.link_fisical>h5');
 
+export let fis = localStorage.fisical ? JSON.parse(localStorage.fisical) : '';
 export let sex = localStorage.obj ? JSON.parse(localStorage.obj) : '';
 
 if (sex === 5) {
@@ -28,7 +29,6 @@ function closingEventGenders() {
       removeClass(gender, 'show');
       showText(textGender, 'Ваш пол: Мужской');
       showText(btnCler, 'Очистить');
-      enableButton();
 
       sex = 5;
 
@@ -37,7 +37,6 @@ function closingEventGenders() {
       removeClass(gender, 'show');
       showText(textGender, 'Ваш пол: Женсикй');
       showText(btnCler, 'Очистить');
-      enableButton();
 
       sex = -161;
 
@@ -47,8 +46,6 @@ function closingEventGenders() {
 }
 
 //  Fisical
-
-let fis = localStorage.fisical ? JSON.parse(localStorage.fisical) : '';
 
 if (fis == 1) {
   showText(textFisical, 'Ваша физ.активность: Минимальная');
@@ -107,7 +104,6 @@ function closingEventFisical() {
       }
     }
     removeClass(fisical, 'show');
-    enableButton();
   });
 }
 
