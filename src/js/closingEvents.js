@@ -1,4 +1,5 @@
 import { btnCler, btnRes } from './eventLinks.js';
+import { showText, removeClass, enableButton } from './helpers.js';
 
 export const gender = document.querySelector('div.container_genders');
 export const age = document.querySelector('div.container_age');
@@ -11,9 +12,9 @@ export const textFisical = document.querySelector('div.link_fisical>h5');
 export let sex = localStorage.obj ? JSON.parse(localStorage.obj) : '';
 
 if (sex === 5) {
-  textGender.textContent = 'Ваш пол: Мужской';
+  showText(textGender, 'Ваш пол: Мужской');
 } else if (sex === -161) {
-  textGender.textContent = 'Ваш пол: Женский';
+  showText(textGender, 'Ваш пол: Женский');
 }
 
 // Gender
@@ -24,22 +25,22 @@ function closingEventGenders() {
     const woman = event.target.closest('div.woman');
 
     if (man) {
-      gender.classList.remove('show');
-
-      textGender.textContent = 'Ваш пол: Мужской';
-      btnCler.textContent = 'Очистить';
+      removeClass(gender, 'show');
+      showText(textGender, 'Ваш пол: Мужской');
+      showText(btnCler, 'Очистить');
+      enableButton();
 
       sex = 5;
 
-      btnRes.removeAttribute('disabled');
       localStorage.setItem('obj', JSON.stringify(sex));
     } else if (woman) {
-      gender.classList.remove('show');
-      textGender.textContent = 'Ваш пол: Женский';
+      removeClass(gender, 'show');
+      showText(textGender, 'Ваш пол: Женсикй');
+      showText(btnCler, 'Очистить');
+      enableButton();
+
       sex = -161;
-      console.log(sex);
-      btnRes.removeAttribute('disabled');
-      btnCler.textContent = 'Очистить';
+
       localStorage.setItem('obj', JSON.stringify(sex));
     }
   });
@@ -50,67 +51,63 @@ function closingEventGenders() {
 let fis = localStorage.fisical ? JSON.parse(localStorage.fisical) : '';
 
 if (fis == 1) {
-  textFisical.textContent = 'Ваша физ.активность: Минимальная';
+  showText(textFisical, 'Ваша физ.активность: Минимальная');
 } else if (fis == 2) {
-  textFisical.textContent = 'Ваша физ.активность: Низкая ';
+  showText(textFisical, 'Ваша физ.активность: Низкая');
 } else if (fis == 3) {
-  textFisical.textContent = 'Ваша физ.активность: Средняя';
+  showText(textFisical, 'Ваша физ.активность: Средняя');
 } else if (fis == 4) {
-  textFisical.textContent = 'Ваша физ.активность: Высокая';
+  showText(textFisical, 'Ваша физ.активность: Высокая');
 } else if (fis == 5) {
-  textFisical.textContent = 'Ваша физ.активность: Очень высокая';
+  showText(textFisical, 'Ваша физ.активность: Очень высокая');
 }
+
+// При клике на текст не срабатывает действие
 
 function closingEventFisical() {
   fisical.addEventListener('click', (event) => {
     switch (event.target.dataset.revie) {
       case 'minimal': {
-        textFisical.textContent = 'Ваша физ.активность: Минимальная';
-        btnCler.textContent = 'Очистить';
-
+        showText(textFisical, 'Ваша физ.активность: Минимальная');
+        showText(btnCler, 'Очистить');
         localStorage.setItem('fisical', JSON.stringify(1));
 
         break;
       }
 
       case 'low': {
-        textFisical.textContent = 'Ваша физ.активность: Низкая ';
-        btnCler.textContent = 'Очистить';
-
+        showText(textFisical, 'Ваша физ.активность: Низкая');
+        showText(btnCler, 'Очистить');
         localStorage.setItem('fisical', JSON.stringify(2));
 
         break;
       }
       case 'average': {
-        textFisical.textContent = 'Ваша физ.активность: Средняя ';
-        btnCler.textContent = 'Очистить';
-
+        showText(textFisical, 'Ваша физ.активность: Средняя');
+        showText(btnCler, 'Очистить');
         localStorage.setItem('fisical', JSON.stringify(3));
 
         break;
       }
 
       case 'high': {
-        textFisical.textContent = 'Ваша физ.активность: Высокая ';
-        btnCler.textContent = 'Очистить';
-
+        showText(textFisical, 'Ваша физ.активность: Высокая');
+        showText(btnCler, 'Очистить');
         localStorage.setItem('fisical', JSON.stringify(4));
 
         break;
       }
 
       case 'veryHigh': {
-        textFisical.textContent = 'Ваша физ.активность: Очень высокая ';
-        btnCler.textContent = 'Очистить';
-
+        showText(textFisical, 'Ваша физ.активность: Очень высокая');
+        showText(btnCler, 'Очистить');
         localStorage.setItem('fisical', JSON.stringify(5));
 
         break;
       }
     }
-
-    fisical.classList.remove('show');
-    btnRes.removeAttribute('disabled');
+    removeClass(fisical, 'show');
+    enableButton();
   });
 }
 
