@@ -26,17 +26,14 @@ let eight = localStorage.eight ? JSON.parse(localStorage.eight) : '';
 
 if (age) {
   showText(textAge, `Вашь возраст: ${age} `);
-  enableButton();
   changeValue(ageInput, age);
 }
 if (groth) {
   showText(textGroth, `Вашь рост: ${groth} `);
-  enableButton();
   changeValue(grothInput, groth);
 }
 if (eight) {
   showText(textEight, `Вашь вес: ${eight} `);
-  enableButton();
   changeValue(eightInput, eight);
 }
 
@@ -59,9 +56,6 @@ function eventBtn() {
             5 * Number(ageInput.value) +
             closing.sex
         );
-        if (eightInput.value && grothInput.value && ageInput.value) {
-          enableButton();
-        }
         normalPlus = Math.ceil(normal + normal * 0.15);
         normalMinus = Math.floor(normal - normal * 0.15);
 
@@ -81,14 +75,13 @@ function eventBtn() {
         showText(textEight, 'Укажите ваш вес');
         showText(textGroth, 'Укажите ваш рост');
 
+        ageInput.setAttribute('value', '');
+        grothInput.setAttribute('value', '');
+        eightInput.setAttribute('value', '');
+
         btnRes.setAttribute('disabled', 'disabled');
 
         localStorage.clear();
-
-        ageInput.setAttribute('value', ''); // Перестали работать
-        grothInput.setAttribute('value', '');
-        eightInput.setAttribute('value', '');
-        // changeValue  не работает функция
       }
     } else if (btnCler.textContent == 'Закрыть') {
       if (closing.age.classList.contains('show')) {
@@ -108,12 +101,16 @@ function eventBtn() {
         removeClass(closing.eight, 'show');
 
         if (eightInput.value) {
-          showText(textEight, `Вашь вес: ${eightInput.value}`);
+          showText(textEight, `Вашь вес: ${+eightInput.value}`);
         }
         showText(btnCler, 'Очистить');
       } else if (popatResult.classList.contains('open')) {
         removeClass(popatResult, 'open');
+
         showText(btnCler, 'Очистить');
+      }
+      if (+eightInput.value && +grothInput.value && +ageInput.value) {
+        enableButton();
       }
     }
   });
