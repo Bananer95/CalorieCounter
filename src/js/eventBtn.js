@@ -26,17 +26,14 @@ let eight = localStorage.eight ? JSON.parse(localStorage.eight) : '';
 
 if (age) {
   showText(textAge, `Вашь возраст: ${age} `);
-
   changeValue(ageInput, age);
 }
 if (groth) {
   showText(textGroth, `Вашь рост: ${groth} `);
-
   changeValue(grothInput, groth);
 }
 if (eight) {
   showText(textEight, `Вашь вес: ${eight} `);
-
   changeValue(eightInput, eight);
 }
 

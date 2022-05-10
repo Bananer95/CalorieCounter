@@ -8,7 +8,10 @@ const links = document.getElementById('links');
 
 function eventLinks() {
   links.addEventListener('click', (event) => {
-    switch (event.target.dataset.action) {
+    const dataset = event.target.dataset.action;
+    if (!dataset) return;
+
+    switch (dataset) {
       case 'link_gender': {
         showBlock(closeEvent.gender);
         break;

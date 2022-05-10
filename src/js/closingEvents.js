@@ -63,7 +63,10 @@ if (fis == 1) {
 
 function closingEventFisical() {
   fisical.addEventListener('click', (event) => {
-    switch (event.target.dataset.revie) {
+    const fisicalBox = event.target.closest('.fisical_box');
+    if (!fisicalBox) return;
+
+    switch (fisicalBox.dataset.revie) {
       case 'minimal': {
         showText(textFisical, 'Ваша физ.активность: Минимальная');
         showText(btnCler, 'Очистить');
