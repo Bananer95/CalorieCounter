@@ -1,0 +1,85 @@
+.container_genders {
+  position: fixed;
+  top: 23%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  max-height: 66vh;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.2s linear;
+
+  h3 {
+    margin: 15px 0;
+  }
+  .genders {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .man {
+      border: 1px solid $dark_blue;
+      width: 50%;
+      margin: 0 15px 20px;
+      border-radius: 10px;
+      border-top-left-radius: 30px;
+      border-bottom-left-radius: 30px;
+      transition: 0.2s linear;
+
+      h2 {
+        color: $dark_blue;
+      }
+
+      p {
+        margin: 15px;
+        .man_photo {
+          float: right;
+          margin: 0 0 10px 0;
+        }
+      }
+
+      &:hover {
+        background-color: $dark_blue;
+
+        h2 {
+          color: $white;
+        }
+      }
+    }
+    .woman {
+      border: 1px solid $deep_yello;
+      width: 50%;
+      margin: 0 15px 20px;
+      border-radius: 10px;
+      border-top-right-radius: 30px;
+      border-bottom-right-radius: 30px;
+      transition: 0.2s linear;
+      h2 {
+        color: $deep_yello;
+      }
+
+      p {
+        margin: 15px;
+
+        .woman_photo {
+          float: left;
+          margin: 0 0 10px 0;
+        }
+      }
+
+      &:hover {
+        background-color: $deep_yello;
+
+        h2 {
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+.show {
+  opacity: 1;
+  visibility: visible;
+}

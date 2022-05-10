@@ -1,0 +1,62 @@
+.container_result {
+  position: fixed;
+  top: 30%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  max-height: 30vh;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.2s linear;
+
+  .result {
+    h4 {
+      margin-bottom: 20px;
+    }
+  }
+  .result_options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 90%;
+    margin: 0 auto 20px;
+
+    .result_normal {
+      padding: 0 5px;
+      max-width: 33%;
+      span {
+        text-transform: uppercase;
+        font-size: $_27px;
+        color: $blue;
+      }
+    }
+
+    .result_up {
+      max-width: 33%;
+      padding: 0 5px;
+
+      span {
+        text-transform: uppercase;
+        font-size: $_27px;
+        color: $yello;
+      }
+    }
+
+    .result_down {
+      max-width: 33%;
+      padding: 0 5px;
+
+      span {
+        text-transform: uppercase;
+        font-size: $_27px;
+        color: $deep_yello;
+      }
+    }
+  }
+}
+
+.open {
+  opacity: 1;
+  visibility: visible;
+}
