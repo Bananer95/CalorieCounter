@@ -39,8 +39,10 @@ if (eight) {
 
 function eventBtn() {
   btnReult.addEventListener('click', (event) => {
-    const res = event.target.closest('button.btn_calculation');
-    const claer = event.target.closest('button.btn_clear');
+    const res = event.target.closest('.btn_calculation');
+    const claer = event.target.closest('.btn_clear');
+    if (!res && !claer) return;
+
     let normal;
     let normalPlus;
     let normalMinus;
@@ -75,9 +77,9 @@ function eventBtn() {
         showText(textEight, 'Укажите ваш вес');
         showText(textGroth, 'Укажите ваш рост');
 
-        ageInput.setAttribute('value', '');
-        grothInput.setAttribute('value', '');
-        eightInput.setAttribute('value', '');
+        ageInput.value = '';
+        grothInput.value = '';
+        eightInput.value = '';
 
         btnRes.setAttribute('disabled', 'disabled');
 
