@@ -9,6 +9,7 @@
 @import 'result.scss';
 @import 'footer.scss';
 @import 'links.scss';
+@import 'adaptive.scss';
 
 * {
   margin: 0;
@@ -36,6 +37,46 @@ html {
   font-family: 'Oswald', sans-serif;
   font-weight: 400;
   font-size: 18px;
+}
+
+html {
+  @media (max-width: 1200px) {
+    font-size: 18px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+  }
+
+  @media (max-width: 992px) {
+    font-size: 16px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+  }
+  @media (max-width: 920px) {
+    font-size: 15px;
+  }
+
+  @media (max-width: 892px) {
+    font-size: 15px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+  }
+
+  @media (max-width: 792px) {
+    font-size: 14px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+  }
+  @media (max-width: 645px) {
+    font-size: 13px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+  }
+
+  @media (max-width: 520px) {
+    font-size: 12px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+  }
 }
 
 .container {

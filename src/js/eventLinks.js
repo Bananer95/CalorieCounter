@@ -6,24 +6,33 @@ export const btnRes = document.querySelector('button.btn_calculation');
 
 const links = document.getElementById('links');
 
+function stopDefAction(evt) {
+  evt.preventDefault();
+}
+
 function eventLinks() {
   links.addEventListener('click', (event) => {
-    btnRes.setAttribute('disabled', 'disabled');
+    const dataset = event.target.dataset.action;
+    if (!dataset) return;
+    if (
+      closeEvent.age.classList.contains('show') ||
+      closeEvent.groth.classList.contains('show') ||
+      closeEvent.eight.classList.contains('show')
+    )
+      return;
 
-    switch (event.target.dataset.action) {
+    switch (dataset) {
       case 'link_gender': {
         showBlock(closeEvent.gender);
         break;
       }
       case 'link_fisical': {
         showBlock(closeEvent.fisical);
-
         break;
       }
 
       case 'link_age': {
         showBlock(closeEvent.age);
-
         break;
       }
 
@@ -33,6 +42,7 @@ function eventLinks() {
       }
 
       case 'link_eight': {
+        stopDefAction;
         showBlock(closeEvent.eight);
         break;
       }
