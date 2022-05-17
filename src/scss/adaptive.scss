@@ -1,0 +1,348 @@
+@media (max-width: 1201px) {
+  body {
+    .container {
+      max-width: 1100px;
+    }
+  }
+
+  .container_genders {
+    .genders {
+      .man {
+        p {
+          .man_photo {
+            height: 260px;
+            margin: 0 15px 20px 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 993px) {
+  body {
+    .container {
+      max-width: 892px;
+    }
+    .container_genders {
+      inset: 25% 0 0;
+    }
+
+    .container_age {
+      h3 {
+        margin: 20px 0;
+      }
+      .age {
+        .img_age {
+          img {
+            width: 150px;
+          }
+        }
+      }
+    }
+
+    .container_groth {
+      h3 {
+        margin: 15px 0 0 0;
+      }
+      .groth {
+        .img_groth {
+          img {
+            height: 170px;
+          }
+        }
+        p {
+          margin: 0 0 0 0px;
+        }
+      }
+    }
+    .container_eight {
+      h3 {
+        margin: 11px 0;
+      }
+      .eight {
+        .img_eight {
+          img {
+            width: 150px;
+          }
+        }
+      }
+    }
+
+    .container_fisical {
+      inset: 17% 0 0;
+      h3 {
+        margin: 11px 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 893px) {
+  body {
+    .header {
+      .reape {
+        .photo {
+          display: none;
+        }
+      }
+    }
+    .container {
+      max-width: 792px;
+    }
+
+    .container_genders {
+      h3 {
+        margin: 30px 0;
+      }
+      .genders {
+        .woman {
+          p {
+            .woman_photo {
+              height: 200px;
+            }
+          }
+        }
+        .man {
+          p {
+            .man_photo {
+              height: 200px;
+            }
+          }
+        }
+      }
+    }
+
+    .container_eight {
+      .eight {
+        .img_eight {
+          img {
+            width: 125px;
+          }
+        }
+      }
+    }
+    .container_fisical {
+      .fisical {
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 793px) {
+  body {
+    .container {
+      max-width: 692;
+    }
+
+    .container_genders {
+      inset: 20% 0 0;
+      max-height: 62vh;
+      h3 {
+        margin: 20px 0;
+      }
+      .genders {
+        .woman {
+          p {
+            .woman_photo {
+              height: 180px;
+            }
+          }
+        }
+        .man {
+          p {
+            .man_photo {
+              height: 160px;
+            }
+          }
+        }
+      }
+    }
+
+    .container_age {
+      .age {
+        .img_age {
+          img {
+            width: 120px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 646px) {
+  body {
+    .header {
+      .reape {
+        .title {
+          h1 {
+            font-size: 2.7rem;
+          }
+        }
+      }
+    }
+    .link {
+      margin: 0 0 15px 4vh;
+    }
+    .container {
+      max-width: 590px;
+    }
+    .container_genders {
+      max-height: 72vh;
+      inset: 19% 0 0;
+
+      .genders {
+        .woman {
+          p {
+            .woman_photo {
+              height: 200px;
+            }
+          }
+        }
+        .man {
+          p {
+            margin: 5px;
+            .man_photo {
+              height: 200px;
+              margin: 10px;
+            }
+          }
+        }
+      }
+    }
+
+    .container_age {
+      h3 {
+        margin: 10px 0 30px;
+      }
+      .age {
+        align-items: center;
+        .img_age {
+          img {
+            width: 100px;
+          }
+        }
+      }
+    }
+    .container_eight {
+      .eight {
+        align-items: center;
+        .img_eight {
+          img {
+            width: 100px;
+          }
+        }
+      }
+    }
+    .container_fisical {
+      .fisical {
+        .fisical_box {
+          min-width: 70%;
+        }
+      }
+    }
+    .footer {
+      .btn {
+        .btn_calculation {
+          font-size: $_27px;
+          padding: 20px 40px;
+        }
+        .btn_clear {
+          font-size: $_27px;
+          padding: 20px 40px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 431px) {
+  body {
+    .container {
+      max-width: 415px;
+    }
+    .container_genders {
+      inset: 23% 0 0;
+      .genders {
+        .man {
+          margin: 0 7px 20px;
+        }
+        .woman {
+          margin: 0 7px 20px;
+        }
+      }
+    }
+    .container_age {
+      inset: 23% 0 0;
+      max-height: 46vh;
+      h3 {
+        margin: 10px 0;
+      }
+      .age {
+        flex-direction: column;
+        p {
+          weight: 100%;
+        }
+        .age_input {
+          margin-bottom: 10px;
+        }
+      }
+    }
+
+    .container_groth {
+      inset: 23% 0 0;
+      max-height: 46vh;
+      h3 {
+        margin: 10px 0;
+      }
+      .groth {
+        flex-direction: column;
+        p {
+          width: 80%;
+          margin-bottom: 10px;
+        }
+        .groth_input {
+          margin-bottom: 10px;
+        }
+
+        .img_groth {
+          margin-bottom: 0;
+          img {
+            height: 130px;
+          }
+        }
+      }
+    }
+
+    .container_eight {
+      inset: 23% 0 0;
+      max-height: 46vh;
+      h3 {
+        margin: 10px 0;
+      }
+      .eight {
+        flex-direction: column;
+        p {
+          max-width: 90%;
+          margin-bottom: 10px;
+        }
+        .eight_input {
+          margin-bottom: 10px;
+        }
+      }
+    }
+    .container_fisical {
+      h3 {
+        margin: 11px 0 0;
+      }
+      inset: 20% 0 0;
+      .fisical {
+        .fisical_box {
+          margin: 18px auto;
+        }
+      }
+    }
+  }
+}

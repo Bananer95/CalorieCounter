@@ -9,6 +9,7 @@ export const eight = document.querySelector('div.container_eight');
 export const textGender = document.querySelector('div.link_gender>h5');
 export const textFisical = document.querySelector('div.link_fisical>h5');
 
+export let fis = localStorage.fisical ? JSON.parse(localStorage.fisical) : '';
 export let sex = localStorage.obj ? JSON.parse(localStorage.obj) : '';
 
 if (sex === 5) {
@@ -28,7 +29,6 @@ function closingEventGenders() {
       removeClass(gender, 'show');
       showText(textGender, 'Ваш пол: Мужской');
       showText(btnCler, 'Очистить');
-      enableButton();
 
       sex = 5;
 
@@ -37,7 +37,6 @@ function closingEventGenders() {
       removeClass(gender, 'show');
       showText(textGender, 'Ваш пол: Женсикй');
       showText(btnCler, 'Очистить');
-      enableButton();
 
       sex = -161;
 
@@ -47,8 +46,6 @@ function closingEventGenders() {
 }
 
 //  Fisical
-
-let fis = localStorage.fisical ? JSON.parse(localStorage.fisical) : '';
 
 if (fis == 1) {
   showText(textFisical, 'Ваша физ.активность: Минимальная');
@@ -66,7 +63,10 @@ if (fis == 1) {
 
 function closingEventFisical() {
   fisical.addEventListener('click', (event) => {
-    switch (event.target.dataset.revie) {
+    const fisicalBox = event.target.closest('.fisical_box');
+    if (!fisicalBox) return;
+
+    switch (fisicalBox.dataset.revie) {
       case 'minimal': {
         showText(textFisical, 'Ваша физ.активность: Минимальная');
         showText(btnCler, 'Очистить');
@@ -107,7 +107,6 @@ function closingEventFisical() {
       }
     }
     removeClass(fisical, 'show');
-    enableButton();
   });
 }
 

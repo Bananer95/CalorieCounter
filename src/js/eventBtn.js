@@ -19,30 +19,30 @@ const textEight = document.querySelector('div.link_eight>h5');
 const resultNorma = document.querySelector('div.result_normal>p>span');
 const resultUp = document.querySelector('div.result_up>p>span');
 const resultDown = document.querySelector('div.result_down>p>span');
+
 let age = localStorage.age ? JSON.parse(localStorage.age) : '';
 let groth = localStorage.groth ? JSON.parse(localStorage.groth) : '';
 let eight = localStorage.eight ? JSON.parse(localStorage.eight) : '';
 
 if (age) {
   showText(textAge, `Вашь возраст: ${age} `);
-  enableButton();
   changeValue(ageInput, age);
 }
 if (groth) {
   showText(textGroth, `Вашь рост: ${groth} `);
-  enableButton();
   changeValue(grothInput, groth);
 }
 if (eight) {
   showText(textEight, `Вашь вес: ${eight} `);
-  enableButton();
   changeValue(eightInput, eight);
 }
 
 function eventBtn() {
   btnReult.addEventListener('click', (event) => {
-    const res = event.target.closest('button.btn_calculation');
-    const claer = event.target.closest('button.btn_clear');
+    const res = event.target.closest('.btn_calculation');
+    const claer = event.target.closest('.btn_clear');
+    if (!res && !claer) return;
+
     let normal;
     let normalPlus;
     let normalMinus;
@@ -77,47 +77,42 @@ function eventBtn() {
         showText(textEight, 'Укажите ваш вес');
         showText(textGroth, 'Укажите ваш рост');
 
+        ageInput.value = '';
+        grothInput.value = '';
+        eightInput.value = '';
+
         btnRes.setAttribute('disabled', 'disabled');
 
         localStorage.clear();
-
-        ageInput.setAttribute('value', '');
-        grothInput.setAttribute('value', '');
-        eightInput.setAttribute('value', '');
-        // changeValue  не работает функция
       }
     } else if (btnCler.textContent == 'Закрыть') {
       if (closing.age.classList.contains('show')) {
         removeClass(closing.age, 'show');
         showText(btnCler, 'Очистить');
-
         if (ageInput.value) {
           showText(textAge, `Вашь возраст: ${+ageInput.value}`);
         }
-
-        btnRes.removeAttribute('disabled');
       } else if (closing.groth.classList.contains('show')) {
         removeClass(closing.groth, 'show');
-
         if (grothInput.value) {
           showText(textGroth, `Вашь рост: ${+grothInput.value}`);
         }
-        showText(btnCler, 'Очистить');
 
-        enableButton();
+        showText(btnCler, 'Очистить');
       } else if (closing.eight.classList.contains('show')) {
         removeClass(closing.eight, 'show');
 
         if (eightInput.value) {
-          showText(textEight, `Вашь вес: ${eightInput.value}`);
+          showText(textEight, `Вашь вес: ${+eightInput.value}`);
         }
         showText(btnCler, 'Очистить');
-
-        btnRes.removeAttribute('disabled');
       } else if (popatResult.classList.contains('open')) {
         removeClass(popatResult, 'open');
 
         showText(btnCler, 'Очистить');
+      }
+      if (+eightInput.value && +grothInput.value && +ageInput.value) {
+        enableButton();
       }
     }
   });
