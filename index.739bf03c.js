@@ -532,17 +532,12 @@ var _eventBtnJsDefault = parcelHelpers.interopDefault(_eventBtnJs);
 var _eventLinksJs = require("./eventLinks.js");
 var _eventLinksJsDefault = parcelHelpers.interopDefault(_eventLinksJs);
 var _closingEventsJs = require("./closingEvents.js");
-var _apiJs = require("./api.js");
 _eventBtnJsDefault.default();
 _eventLinksJsDefault.default();
 _closingEventsJs.closingEventGenders();
-_closingEventsJs.closingEventFisical();
-let banan;
-fetch(_apiJs.URL).then((response)=>response.json()
-).then((data)=>console.log('Калорийность банана в идеальном состоянии:', data.foodNutrients[2].amount)
-); // Не получаеться задать переменной значение из ответа  от api
+_closingEventsJs.closingEventFisical(); //  Не могу изменять экспортированные перменные в других файлах
 
-},{"./eventBtn.js":"fBXZA","./eventLinks.js":"9y8CE","./closingEvents.js":"cihMi","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./api.js":"9u7qN"}],"fBXZA":[function(require,module,exports) {
+},{"./eventBtn.js":"fBXZA","./eventLinks.js":"9y8CE","./closingEvents.js":"cihMi","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fBXZA":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "btnReult", ()=>btnReult
@@ -566,21 +561,23 @@ let groth = localStorage.groth ? JSON.parse(localStorage.groth) : '';
 let eight = localStorage.eight ? JSON.parse(localStorage.eight) : '';
 if (age) {
     _helpersJs.showText(textAge, `Вашь возраст: ${age} `);
+    _helpersJs.enableButton();
     _helpersJs.changeValue(ageInput, age);
 }
 if (groth) {
     _helpersJs.showText(textGroth, `Вашь рост: ${groth} `);
+    _helpersJs.enableButton();
     _helpersJs.changeValue(grothInput, groth);
 }
 if (eight) {
     _helpersJs.showText(textEight, `Вашь вес: ${eight} `);
+    _helpersJs.enableButton();
     _helpersJs.changeValue(eightInput, eight);
 }
 function eventBtn() {
     btnReult.addEventListener('click', (event)=>{
-        const res = event.target.closest('.btn_calculation');
-        const claer = event.target.closest('.btn_clear');
-        if (!res && !claer) return;
+        const res = event.target.closest('button.btn_calculation');
+        const claer = event.target.closest('button.btn_clear');
         let normal;
         let normalPlus;
         let normalMinus;
@@ -604,36 +601,39 @@ function eventBtn() {
                 _helpersJs.showText(textAge, 'Укажите ваш возраст');
                 _helpersJs.showText(textEight, 'Укажите ваш вес');
                 _helpersJs.showText(textGroth, 'Укажите ваш рост');
-                ageInput.value = '';
-                grothInput.value = '';
-                eightInput.value = '';
                 _eventLinks.btnRes.setAttribute('disabled', 'disabled');
                 localStorage.clear();
+                ageInput.setAttribute('value', '');
+                grothInput.setAttribute('value', '');
+                eightInput.setAttribute('value', '');
+            // changeValue  не работает функция
             }
         } else if (_eventLinks.btnCler.textContent == 'Закрыть') {
             if (_closingEventsJs.age.classList.contains('show')) {
                 _helpersJs.removeClass(_closingEventsJs.age, 'show');
                 _helpersJs.showText(_eventLinks.btnCler, 'Очистить');
                 if (ageInput.value) _helpersJs.showText(textAge, `Вашь возраст: ${+ageInput.value}`);
+                _eventLinks.btnRes.removeAttribute('disabled');
             } else if (_closingEventsJs.groth.classList.contains('show')) {
                 _helpersJs.removeClass(_closingEventsJs.groth, 'show');
                 if (grothInput.value) _helpersJs.showText(textGroth, `Вашь рост: ${+grothInput.value}`);
                 _helpersJs.showText(_eventLinks.btnCler, 'Очистить');
+                _helpersJs.enableButton();
             } else if (_closingEventsJs.eight.classList.contains('show')) {
                 _helpersJs.removeClass(_closingEventsJs.eight, 'show');
-                if (eightInput.value) _helpersJs.showText(textEight, `Вашь вес: ${+eightInput.value}`);
+                if (eightInput.value) _helpersJs.showText(textEight, `Вашь вес: ${eightInput.value}`);
                 _helpersJs.showText(_eventLinks.btnCler, 'Очистить');
+                _eventLinks.btnRes.removeAttribute('disabled');
             } else if (popatResult.classList.contains('open')) {
                 _helpersJs.removeClass(popatResult, 'open');
                 _helpersJs.showText(_eventLinks.btnCler, 'Очистить');
             }
-            if (+eightInput.value && +grothInput.value && +ageInput.value) _helpersJs.enableButton();
         }
     });
 }
 exports.default = eventBtn;
 
-},{"./closingEvents.js":"cihMi","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./helpers.js":"hGI1E","./eventLinks":"9y8CE"}],"cihMi":[function(require,module,exports) {
+},{"./closingEvents.js":"cihMi","./helpers.js":"hGI1E","./eventLinks":"9y8CE","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cihMi":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "gender", ()=>gender
@@ -650,8 +650,6 @@ parcelHelpers.export(exports, "textGender", ()=>textGender
 );
 parcelHelpers.export(exports, "textFisical", ()=>textFisical
 );
-parcelHelpers.export(exports, "fis", ()=>fis
-);
 parcelHelpers.export(exports, "sex", ()=>sex
 );
 parcelHelpers.export(exports, "closingEventGenders", ()=>closingEventGenders
@@ -667,7 +665,6 @@ const fisical = document.querySelector('div.container_fisical');
 const eight = document.querySelector('div.container_eight');
 const textGender = document.querySelector('div.link_gender>h5');
 const textFisical = document.querySelector('div.link_fisical>h5');
-let fis = localStorage.fisical ? JSON.parse(localStorage.fisical) : '';
 let sex = localStorage.obj ? JSON.parse(localStorage.obj) : '';
 if (sex === 5) _helpersJs.showText(textGender, 'Ваш пол: Мужской');
 else if (sex === -161) _helpersJs.showText(textGender, 'Ваш пол: Женский');
@@ -680,18 +677,21 @@ function closingEventGenders() {
             _helpersJs.removeClass(gender, 'show');
             _helpersJs.showText(textGender, 'Ваш пол: Мужской');
             _helpersJs.showText(_eventLinksJs.btnCler, 'Очистить');
+            _helpersJs.enableButton();
             sex = 5;
             localStorage.setItem('obj', JSON.stringify(sex));
         } else if (woman) {
             _helpersJs.removeClass(gender, 'show');
             _helpersJs.showText(textGender, 'Ваш пол: Женсикй');
             _helpersJs.showText(_eventLinksJs.btnCler, 'Очистить');
+            _helpersJs.enableButton();
             sex = -161;
             localStorage.setItem('obj', JSON.stringify(sex));
         }
     });
 }
 //  Fisical
+let fis = localStorage.fisical ? JSON.parse(localStorage.fisical) : '';
 if (fis == 1) _helpersJs.showText(textFisical, 'Ваша физ.активность: Минимальная');
 else if (fis == 2) _helpersJs.showText(textFisical, 'Ваша физ.активность: Низкая');
 else if (fis == 3) _helpersJs.showText(textFisical, 'Ваша физ.активность: Средняя');
@@ -700,9 +700,7 @@ else if (fis == 5) _helpersJs.showText(textFisical, 'Ваша физ.актив�
 // При клике на текст не срабатывает действие
 function closingEventFisical() {
     fisical.addEventListener('click', (event)=>{
-        const fisicalBox = event.target.closest('.fisical_box');
-        if (!fisicalBox) return;
-        switch(fisicalBox.dataset.revie){
+        switch(event.target.dataset.revie){
             case 'minimal':
                 _helpersJs.showText(textFisical, 'Ваша физ.активность: Минимальная');
                 _helpersJs.showText(_eventLinksJs.btnCler, 'Очистить');
@@ -730,40 +728,11 @@ function closingEventFisical() {
                 break;
         }
         _helpersJs.removeClass(fisical, 'show');
+        _helpersJs.enableButton();
     });
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./eventLinks.js":"9y8CE","./helpers.js":"hGI1E"}],"gkKU3":[function(require,module,exports) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
-    };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, '__esModule', {
-        value: true
-    });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === 'default' || key === '__esModule' || dest.hasOwnProperty(key)) return;
-        Object.defineProperty(dest, key, {
-            enumerable: true,
-            get: function() {
-                return source[key];
-            }
-        });
-    });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
-    });
-};
-
-},{}],"9y8CE":[function(require,module,exports) {
+},{"./eventLinks.js":"9y8CE","./helpers.js":"hGI1E","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9y8CE":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "btnCler", ()=>btnCler
@@ -775,15 +744,10 @@ var _helpersJs = require("./helpers.js");
 const btnCler = document.querySelector('button.btn_clear');
 const btnRes = document.querySelector('button.btn_calculation');
 const links = document.getElementById('links');
-function stopDefAction(evt) {
-    evt.preventDefault();
-}
 function eventLinks() {
     links.addEventListener('click', (event)=>{
-        const dataset = event.target.dataset.action;
-        if (!dataset) return;
-        if (_closingEventsJs.age.classList.contains('show') || _closingEventsJs.groth.classList.contains('show') || _closingEventsJs.eight.classList.contains('show')) return;
-        switch(dataset){
+        btnRes.setAttribute('disabled', 'disabled');
+        switch(event.target.dataset.action){
             case 'link_gender':
                 _helpersJs.showBlock(_closingEventsJs.gender);
                 break;
@@ -805,7 +769,7 @@ function eventLinks() {
 }
 exports.default = eventLinks;
 
-},{"./closingEvents.js":"cihMi","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./helpers.js":"hGI1E"}],"hGI1E":[function(require,module,exports) {
+},{"./closingEvents.js":"cihMi","./helpers.js":"hGI1E","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"hGI1E":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "showBlock", ()=>showBlock
@@ -841,14 +805,36 @@ function changeValue(block, str) {
     block.setAttribute('value', str);
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./eventLinks":"9y8CE"}],"9u7qN":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-//  под каждый продукт свой url
-parcelHelpers.export(exports, "URL", ()=>URL
-);
-const URL = 'https://api.nal.usda.gov/fdc/v1/food/1105314?api_key=lK35CFXMcbO3la7uRcbxdjUzdihkQe4JnxuUMd6r';
+},{"./eventLinks":"9y8CE","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, '__esModule', {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === 'default' || key === '__esModule' || dest.hasOwnProperty(key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["ljsGX","ebWYT"], "ebWYT", "parcelRequire0145")
+},{}]},["ljsGX","ebWYT"], "ebWYT", "parcelRequire0145")
 
 //# sourceMappingURL=index.739bf03c.js.map
