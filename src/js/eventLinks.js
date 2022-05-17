@@ -14,6 +14,12 @@ function eventLinks() {
   links.addEventListener('click', (event) => {
     const dataset = event.target.dataset.action;
     if (!dataset) return;
+    if (
+      closeEvent.age.classList.contains('show') ||
+      closeEvent.groth.classList.contains('show') ||
+      closeEvent.eight.classList.contains('show')
+    )
+      return;
 
     switch (dataset) {
       case 'link_gender': {
